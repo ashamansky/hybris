@@ -5,6 +5,8 @@ import de.hybris.platform.bonstore.model.OrganisationModel;
 import de.hybris.platform.bonstore.service.MailService;
 import de.hybris.platform.bonstore.service.OrganisationService;
 import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.cronjob.enums.CronJobResult;
+import de.hybris.platform.cronjob.enums.CronJobStatus;
 import de.hybris.platform.cronjob.model.CronJobModel;
 import de.hybris.platform.servicelayer.cronjob.AbstractJobPerformable;
 import de.hybris.platform.servicelayer.cronjob.PerformResult;
@@ -32,7 +34,7 @@ public class SendOrganisationUserListJob extends AbstractJobPerformable<CronJobM
                             .forEach(manager -> mailService.sendUserList(manager, organisation.getCustomers()))
                 );
 
-        return null;
+        return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
     }
 
     private List<CustomerModel> findOrganizationManager(OrganisationModel organisationModel) {
@@ -43,5 +45,13 @@ public class SendOrganisationUserListJob extends AbstractJobPerformable<CronJobM
                 .collect(Collectors.toList());
 
 
+    }
+
+    public void setMailService(MailService mailService) {
+        this.mailService = mailService;
+    }
+
+    public void setOrganisationService(OrganisationService organisationService) {
+        this.organisationService = organisationService;
     }
 }

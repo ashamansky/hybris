@@ -91,5 +91,7 @@
         <property name="mediaService" ref="mediaService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
+
+    <bean id="sendOrganisationUserListJob" class="de.hybris.platform.bonstore.jobs.SendOrganisationUserListJob" autowire="byName"/>
 			
 </beans>
