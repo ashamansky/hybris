@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 08.09.2016 13:48:31                         ---
+ * --- Generated at 08.09.2016 14:45:43                         ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -18,11 +18,12 @@
 package de.hybris.platform.bonstore.jalo;
 
 import de.hybris.platform.bonstore.constants.BonstoreConstants;
-import de.hybris.platform.bonstore.jalo.OrganisationCustomer;
+import de.hybris.platform.constants.CoreConstants;
 import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.type.CollectionType;
+import de.hybris.platform.jalo.user.Customer;
 import de.hybris.platform.util.OneToManyHandler;
 import java.util.Collection;
 import java.util.Collections;
@@ -48,8 +49,8 @@ public abstract class GeneratedOrganisation extends GenericItem
 	/**
 	* {@link OneToManyHandler} for handling 1:n CUSTOMERS's relation attributes from 'many' side.
 	**/
-	protected static final OneToManyHandler<OrganisationCustomer> CUSTOMERSHANDLER = new OneToManyHandler<OrganisationCustomer>(
-	BonstoreConstants.TC.ORGANISATIONCUSTOMER,
+	protected static final OneToManyHandler<Customer> CUSTOMERSHANDLER = new OneToManyHandler<Customer>(
+	CoreConstants.TC.CUSTOMER,
 	false,
 	"organisation",
 	null,
@@ -77,7 +78,7 @@ public abstract class GeneratedOrganisation extends GenericItem
 	 * <i>Generated method</i> - Getter of the <code>Organisation.customers</code> attribute.
 	 * @return the customers
 	 */
-	public Collection<OrganisationCustomer> getCustomers(final SessionContext ctx)
+	public Collection<Customer> getCustomers(final SessionContext ctx)
 	{
 		return CUSTOMERSHANDLER.getValues( ctx, this );
 	}
@@ -86,7 +87,7 @@ public abstract class GeneratedOrganisation extends GenericItem
 	 * <i>Generated method</i> - Getter of the <code>Organisation.customers</code> attribute.
 	 * @return the customers
 	 */
-	public Collection<OrganisationCustomer> getCustomers()
+	public Collection<Customer> getCustomers()
 	{
 		return getCustomers( getSession().getSessionContext() );
 	}
@@ -95,7 +96,7 @@ public abstract class GeneratedOrganisation extends GenericItem
 	 * <i>Generated method</i> - Setter of the <code>Organisation.customers</code> attribute. 
 	 * @param value the customers
 	 */
-	public void setCustomers(final SessionContext ctx, final Collection<OrganisationCustomer> value)
+	public void setCustomers(final SessionContext ctx, final Collection<Customer> value)
 	{
 		CUSTOMERSHANDLER.setValues( ctx, this, value );
 	}
@@ -104,7 +105,7 @@ public abstract class GeneratedOrganisation extends GenericItem
 	 * <i>Generated method</i> - Setter of the <code>Organisation.customers</code> attribute. 
 	 * @param value the customers
 	 */
-	public void setCustomers(final Collection<OrganisationCustomer> value)
+	public void setCustomers(final Collection<Customer> value)
 	{
 		setCustomers( getSession().getSessionContext(), value );
 	}
@@ -113,7 +114,7 @@ public abstract class GeneratedOrganisation extends GenericItem
 	 * <i>Generated method</i> - Adds <code>value</code> to customers. 
 	 * @param value the item to add to customers
 	 */
-	public void addToCustomers(final SessionContext ctx, final OrganisationCustomer value)
+	public void addToCustomers(final SessionContext ctx, final Customer value)
 	{
 		CUSTOMERSHANDLER.addValue( ctx, this, value );
 	}
@@ -122,7 +123,7 @@ public abstract class GeneratedOrganisation extends GenericItem
 	 * <i>Generated method</i> - Adds <code>value</code> to customers. 
 	 * @param value the item to add to customers
 	 */
-	public void addToCustomers(final OrganisationCustomer value)
+	public void addToCustomers(final Customer value)
 	{
 		addToCustomers( getSession().getSessionContext(), value );
 	}
@@ -131,7 +132,7 @@ public abstract class GeneratedOrganisation extends GenericItem
 	 * <i>Generated method</i> - Removes <code>value</code> from customers. 
 	 * @param value the item to remove from customers
 	 */
-	public void removeFromCustomers(final SessionContext ctx, final OrganisationCustomer value)
+	public void removeFromCustomers(final SessionContext ctx, final Customer value)
 	{
 		CUSTOMERSHANDLER.removeValue( ctx, this, value );
 	}
@@ -140,7 +141,7 @@ public abstract class GeneratedOrganisation extends GenericItem
 	 * <i>Generated method</i> - Removes <code>value</code> from customers. 
 	 * @param value the item to remove from customers
 	 */
-	public void removeFromCustomers(final OrganisationCustomer value)
+	public void removeFromCustomers(final Customer value)
 	{
 		removeFromCustomers( getSession().getSessionContext(), value );
 	}

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 08.09.2016 13:48:31                         ---
+ * --- Generated at 08.09.2016 14:45:43                         ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -28,11 +28,15 @@ public class GeneratedBonstoreConstants
 	public static class TC
 	{
 		public static final String ORGANISATION = "Organisation".intern();
-		public static final String ORGANISATIONCUSTOMER = "OrganisationCustomer".intern();
 	}
 	public static class Attributes
 	{
-		// no constants defined.
+		public static class Customer
+		{
+			public static final String ATTEMPTCOUNT = "attemptCount".intern();
+			public static final String ORGANISATION = "organisation".intern();
+			public static final String STATUS = "status".intern();
+		}
 	}
 	public static class Relations
 	{

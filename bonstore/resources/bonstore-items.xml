@@ -20,16 +20,15 @@
 	<relations>
 		<relation code="OrganisationCustomerRelation" localized="false" generate="true" autocreate="true">
 			<sourceElement type="Organisation" qualifier="organisation" cardinality="one" />
-			<targetElement type="OrganisationCustomer" qualifier="customers" cardinality="many"/>
+			<targetElement type="Customer" qualifier="customers" cardinality="many"/>
 		</relation>
 	</relations>
 
 	<itemtypes>
-		<itemtype generate="true"
-				  autocreate="true"
-				  code="OrganisationCustomer"
-				  extends="Customer"
-				  jaloclass="de.hybris.platform.bonstore.jalo.OrganisationCustomer">
+		<itemtype generate="false"
+				  autocreate="false"
+				  code="customer"
+				  extends="Customer">
 			<attributes>
 				<attribute type="java.lang.Boolean" qualifier="status">
 					<persistence type="property"/>

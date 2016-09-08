@@ -47,16 +47,6 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	
 	
 		createItemType(
-			"OrganisationCustomer",
-			"Customer",
-			de.hybris.platform.bonstore.jalo.OrganisationCustomer.class,
-			null,
-			false,
-			null,
-			false
-		);
-	
-		createItemType(
 			"Organisation",
 			"GenericItem",
 			de.hybris.platform.bonstore.jalo.Organisation.class,
@@ -85,9 +75,9 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 	
 	
-				single_createattr_OrganisationCustomer_status();
+				single_createattr_customer_status();
 			
-				single_createattr_OrganisationCustomer_attemptCount();
+				single_createattr_customer_attemptCount();
 			
 				single_createattr_Organisation_id();
 			
@@ -109,7 +99,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			false,
 			CollectionType.COLLECTION,
 			"customers", 
-			"OrganisationCustomer", 
+			"Customer", 
 			true,
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			true,
@@ -121,13 +111,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	}
 
 	
-	public void single_createattr_OrganisationCustomer_status() throws JaloBusinessException
+	public void single_createattr_customer_status() throws JaloBusinessException
 	{
 		
 						Map sqlColumnDefinitions = null;
 					
 				createPropertyAttribute(
-					"OrganisationCustomer", 
+					"customer", 
 					"status",  
 					null,
 					"java.lang.Boolean",
@@ -138,13 +128,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
-	public void single_createattr_OrganisationCustomer_attemptCount() throws JaloBusinessException
+	public void single_createattr_customer_attemptCount() throws JaloBusinessException
 	{
 		
 						Map sqlColumnDefinitions = null;
 					
 				createPropertyAttribute(
-					"OrganisationCustomer", 
+					"customer", 
 					"attemptCount",  
 					null,
 					"java.lang.Integer",
@@ -246,7 +236,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			true,
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			"customers", 
-			"OrganisationCustomer", 
+			"Customer", 
 			true,
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			true,
@@ -256,19 +246,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				{
 				Map customPropsMap = new HashMap();
 				
-				setItemTypeProperties(
-					"OrganisationCustomer",
-					false,
-					true,
-					true,
+				changeMetaType(
+					"customer",
 					null,
 					customPropsMap
 				);
 				}
 			
-			single_setAttributeProperties_OrganisationCustomer_status();
+			single_setAttributeProperties_customer_status();
 		
-			single_setAttributeProperties_OrganisationCustomer_attemptCount();
+			single_setAttributeProperties_customer_attemptCount();
 		
 				{
 				Map customPropsMap = new HashMap();
@@ -295,7 +282,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 
 		
-						public void single_setAttributeProperties_OrganisationCustomer_status() throws JaloBusinessException
+						public void single_setAttributeProperties_customer_status() throws JaloBusinessException
 						{
 							
 							
@@ -303,7 +290,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							Map customPropsMap = new HashMap();
 							
 							setAttributeProperties(
-								"OrganisationCustomer", 
+								"customer", 
 								"status",
 								false, 
 								Boolean.FALSE,
@@ -317,7 +304,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
-						public void single_setAttributeProperties_OrganisationCustomer_attemptCount() throws JaloBusinessException
+						public void single_setAttributeProperties_customer_attemptCount() throws JaloBusinessException
 						{
 							
 							
@@ -325,7 +312,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							Map customPropsMap = new HashMap();
 							
 							setAttributeProperties(
-								"OrganisationCustomer", 
+								"customer", 
 								"attemptCount",
 								false, 
 								null,
@@ -434,7 +421,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 									
 
 									setAttributeProperties(
-										"OrganisationCustomer", 
+										"Customer", 
 										"organisation",
 										false, 
 										null,
