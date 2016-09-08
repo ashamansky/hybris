@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testclasses><bonstore><testclass>de.hybris.platform.bonstore.jalo.BonstoreTest</testclass><testclass>de.hybris.platform.bonstore.service.impl.DefaultBonstoreServiceIntegrationTest</testclass></bonstore></testclasses>
