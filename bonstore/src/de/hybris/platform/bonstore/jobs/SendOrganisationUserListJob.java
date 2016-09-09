@@ -19,7 +19,9 @@ public class SendOrganisationUserListJob extends AbstractJobPerformable<CronJobM
 
     private static final Logger LOG = Logger.getLogger(SendOrganisationUserListJob.class);
 
-    private MailService mailService;
+    private String fromAddress;
+
+    private MailService bonstoreMailService;
     private OrganisationService organisationService;
 
     @Override
@@ -31,7 +33,7 @@ public class SendOrganisationUserListJob extends AbstractJobPerformable<CronJobM
                 .forEach(organisation ->
                     findOrganizationManager(organisation)
                             .stream()
-                            .forEach(manager -> mailService.sendUserList(manager, organisation.getCustomers()))
+                            .forEach(manager -> bonstoreMailService.sendUserList(manager, organisation.getCustomers()))
                 );
 
         return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
@@ -40,15 +42,16 @@ public class SendOrganisationUserListJob extends AbstractJobPerformable<CronJobM
     private List<CustomerModel> findOrganizationManager(OrganisationModel organisationModel) {
         return organisationModel.getCustomers()
                 .stream()
-                //TODO: Need to figure CustomerModel email field name
-                .filter(customer -> customer.getCustomerID().equals(organisationModel.getEmail()))
+                .filter(customer -> customer.getAddresses()
+                        .stream()
+                        .anyMatch(addressModel -> addressModel.getEmail().equals(organisationModel.getEmail())))
                 .collect(Collectors.toList());
 
 
     }
 
     public void setMailService(MailService mailService) {
-        this.mailService = mailService;
+        this.bonstoreMailService = mailService;
     }
 
     public void setOrganisationService(OrganisationService organisationService) {
