@@ -26,7 +26,7 @@ import java.util.Locale;
 import java.util.stream.Collectors;
 
 @SingletonScopedComponent(value = "mailService")
-public class DefaultMailService implements MailService, InitializingBean {
+public class DefaultMailService implements MailService{
     private final static Logger LOG = LoggerFactory.getLogger(DefaultMailService.class);
 
     private String fromAddress;
@@ -45,10 +45,10 @@ public class DefaultMailService implements MailService, InitializingBean {
     @Autowired
     private L10NService l10NService;
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        fromAddress = Config.getParameter("mail.from");
-    }
+//    @Override
+//    public void afterPropertiesSet() throws Exception {
+//        fromAddress = Config.getParameter("mail.from");
+//    }
 
     @Override
     public void sendUserList(CustomerModel manager, Collection<CustomerModel> customers) {
@@ -98,9 +98,5 @@ public class DefaultMailService implements MailService, InitializingBean {
     protected interface MailPreparator
     {
         void prepare(MimeMessageHelper message) throws Exception; //NOPMD
-    }
-
-    public void setMailSender(JavaMailSender mailSender) {
-        this.mailSender = mailSender;
     }
 }
