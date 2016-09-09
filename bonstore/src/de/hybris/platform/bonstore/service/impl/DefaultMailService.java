@@ -2,6 +2,7 @@ package de.hybris.platform.bonstore.service.impl;
 
 
 import de.hybris.platform.bonstore.service.MailService;
+import de.hybris.platform.bonstore.service.SingletonScopedComponent;
 import de.hybris.platform.commons.renderer.RendererService;
 import de.hybris.platform.core.model.user.AddressModel;
 import de.hybris.platform.core.model.user.CustomerModel;
@@ -19,13 +20,12 @@ import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
-import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.Locale;
 import java.util.stream.Collectors;
 
-@Component("bonstoreMailService")
+@SingletonScopedComponent(value = "mailService")
 public class DefaultMailService implements MailService, InitializingBean {
     private final static Logger LOG = LoggerFactory.getLogger(DefaultMailService.class);
 
@@ -33,6 +33,7 @@ public class DefaultMailService implements MailService, InitializingBean {
 
     @Autowired
     private JavaMailSender mailSender;
+
     @Autowired
     private SessionService sessionService;
     @Autowired
@@ -97,5 +98,9 @@ public class DefaultMailService implements MailService, InitializingBean {
     protected interface MailPreparator
     {
         void prepare(MimeMessageHelper message) throws Exception; //NOPMD
+    }
+
+    public void setMailSender(JavaMailSender mailSender) {
+        this.mailSender = mailSender;
     }
 }

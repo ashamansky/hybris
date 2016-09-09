@@ -3,12 +3,13 @@ package de.hybris.platform.bonstore.service.impl;
 import de.hybris.platform.bonstore.daos.OrganisationDao;
 import de.hybris.platform.bonstore.model.OrganisationModel;
 import de.hybris.platform.bonstore.service.OrganisationService;
+import de.hybris.platform.bonstore.service.SingletonScopedComponent;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component("organisationService")
+
+@SingletonScopedComponent(value = "organisationService")
 public class DefaultOrganisationService implements OrganisationService{
 
     @Autowired

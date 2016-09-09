@@ -21,8 +21,17 @@ public class SendOrganisationUserListJob extends AbstractJobPerformable<CronJobM
 
     private String fromAddress;
 
-    private MailService bonstoreMailService;
+
+    private MailService mailService;
     private OrganisationService organisationService;
+
+    public void setOrganisationService(final OrganisationService organisationService) {
+        this.organisationService = organisationService;
+    }
+
+    public void setMailService(final MailService mailService) {
+        this.mailService = mailService;
+    }
 
     @Override
     public PerformResult perform(CronJobModel cronJobModel) {
@@ -33,7 +42,7 @@ public class SendOrganisationUserListJob extends AbstractJobPerformable<CronJobM
                 .forEach(organisation ->
                     findOrganizationManager(organisation)
                             .stream()
-                            .forEach(manager -> bonstoreMailService.sendUserList(manager, organisation.getCustomers()))
+                            .forEach(manager -> mailService.sendUserList(manager, organisation.getCustomers()))
                 );
 
         return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
@@ -48,13 +57,5 @@ public class SendOrganisationUserListJob extends AbstractJobPerformable<CronJobM
                 .collect(Collectors.toList());
 
 
-    }
-
-    public void setMailService(MailService mailService) {
-        this.bonstoreMailService = mailService;
-    }
-
-    public void setOrganisationService(OrganisationService organisationService) {
-        this.organisationService = organisationService;
     }
 }

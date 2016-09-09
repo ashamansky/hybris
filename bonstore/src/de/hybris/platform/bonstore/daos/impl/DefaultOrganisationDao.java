@@ -3,7 +3,6 @@ package de.hybris.platform.bonstore.daos.impl;
 
 import de.hybris.platform.bonstore.daos.OrganisationDao;
 import de.hybris.platform.bonstore.model.OrganisationModel;
-import de.hybris.platform.cuppy.model.PlayerModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
