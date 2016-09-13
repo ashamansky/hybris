@@ -15,35 +15,18 @@
  * terms of the license agreement you entered into with SAP Hybris.
  *  
  */
-package de.hybris.platform.bonstore.constants;
+package de.hybris.platform.bonstorefrontend.constants;
 
 /**
  * @deprecated use constants in Model classes instead
  */
 @Deprecated
 @SuppressWarnings({"unused","cast","PMD"})
-public class GeneratedBonstoreConstants
+public class GeneratedBonstorefrontendConstants
 {
-	public static final String EXTENSIONNAME = "bonstore";
-	public static class TC
-	{
-		public static final String ORGANISATION = "Organisation".intern();
-	}
-	public static class Attributes
-	{
-		public static class Customer
-		{
-			public static final String ATTEMPTCOUNT = "attemptCount".intern();
-			public static final String ORGANISATION = "organisation".intern();
-			public static final String STATUS = "status".intern();
-		}
-	}
-	public static class Relations
-	{
-		public static final String ORGANISATIONCUSTOMERRELATION = "OrganisationCustomerRelation".intern();
-	}
+	public static final String EXTENSIONNAME = "bonstorefrontend";
 	
-	protected GeneratedBonstoreConstants()
+	protected GeneratedBonstorefrontendConstants()
 	{
 		// private constructor
 	}
