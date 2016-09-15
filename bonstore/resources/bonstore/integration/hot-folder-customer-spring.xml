@@ -32,7 +32,7 @@
         </property>
     </bean>
     <bean id="baseDirectory" class="java.lang.String">
-        <constructor-arg value="#{configurationService.configuration.getProperty('acceleratorservices.batch.impex.basefolder')}" />
+        <constructor-arg value="#{configurationService.configuration.getProperty('bonstore.batch.impex.basefolder')}" />
     </bean>
     <!-- Impex import process -->
     <!-- 1) Scan for files, site dependent -->
@@ -120,6 +120,20 @@
             <value>;{+0};{1} {2};{3};</value>
         </property>
     </bean>
+
+    <!--<bean id="batchCustomerConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">-->
+        <!--<property name="header">-->
+            <!--<value>#{defaultImpexProductHeader}-->
+                <!--# Insert Customer-->
+                <!--$defaultPassword=1234-->
+                <!--$setName=name[cellDecorator=de.hybris.platform.acceleratorservices.dataimport.batch.decorator.CustomerNameDecorator]-->
+                <!--INSERT Customer;uid[unique=true];$setName;title(code);password[default=$defaultPassword]-->
+            <!--</value>-->
+        <!--</property>-->
+        <!--<property name="impexRow">-->
+            <!--<value>;{+0};{1} {2};{3};</value>-->
+        <!--</property>-->
+    <!--</bean>-->
 
     <!-- AOP -->
     <aop:config proxy-target-class="false">
