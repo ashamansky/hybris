@@ -1,6 +1,6 @@
 #Base store
-INSERT_UPDATE BaseStore;uid[unique=true];name[lang=en];cmsSites(uid);currencies(isocode);defaultCurrency(isocode);languages(isoCode);defaultLanguage(isoCode);
-;defaultstore;Default Store;storetemplate;USD;USD;en;en;
+INSERT_UPDATE BaseStore;uid[unique=true];name[lang=en];
+;defaultstore;Default Store;
 
 
 INSERT_UPDATE Vendor;name[lang=en];code[unique=true];
