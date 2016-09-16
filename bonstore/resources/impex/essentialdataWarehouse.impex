@@ -6,12 +6,16 @@ INSERT_UPDATE BaseStore;uid[unique=true];name[lang=en];
 INSERT_UPDATE Vendor;name[lang=en];code[unique=true];
 ;Default Vendor;defaultVendor;
 
-INSERT_UPDATE Warehouse;name[lang=en];code[unique=true];default;vendor(code);
-;Default Warehouse;defaultWarehouse;true;defaultVendor;
-;Second Warehouse;secondWarehouse;true;defaultVendor;
+INSERT_UPDATE Warehouse;name[lang=en];code[unique=true];default;vendor(code);baseStores(uid)
+;Default Warehouse;defaultWarehouse;true;defaultVendor;defaultstore
+;Second Warehouse;secondWarehouse;true;defaultVendor;defaultstore
 
-INSERT_UPDATE PointOfService;name[unique=true];description;type(code)
-;shop_1;description_shop_1;STORE
-;shop_2;description_shop_2;STORE
+INSERT_UPDATE OpeningSchedule;code[unique=true,allownull=true];name[lang=en];
+;defaultWorkingHours;Default working hours;
+
+
+
+INSERT_UPDATE PointOfService;name[unique=true];description;type(code);basestore(uid);openingSchedule(code);
+;shop_1;description_shop_1;STORE;defaultstore;defaultWorkingHours;
+;shop_2;description_shop_2;STORE;defaultstore;defaultWorkingHours;
 ;;
-
