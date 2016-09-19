@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 14.09.2016 15:59:55                         ---
+ * --- Generated at 13.09.2016 12:45:37                         ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -17,14 +17,13 @@
  */
 package de.hybris.platform.bonstore.jalo;
 
-import de.hybris.platform.bonstore.constants.BonstoreConstants;
 import de.hybris.platform.constants.CoreConstants;
 import de.hybris.platform.jalo.GenericItem;
-import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.type.CollectionType;
 import de.hybris.platform.jalo.user.Customer;
 import de.hybris.platform.util.OneToManyHandler;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
